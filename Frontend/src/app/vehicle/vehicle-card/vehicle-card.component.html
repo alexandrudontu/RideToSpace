@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-img-wrapper">
+        <img *ngIf="vehicle.Image" class="card-img-top rounded mx-auto d-block" src="assets/images/{{vehicle.Image}}">
+        <img *ngIf="!vehicle.Image" class="card-img-top rounded mx-auto d-block" src="assets/images/default.png">
+        <ul class="list-inline text-center member-icons animate">
+            <li class="list-inline-item">
+                <button class="btn btn-primary" routerLink="/vehicle-detail/{{vehicle.Id}}"><i class="fa-solid fa-circle-info"></i></button>
+            </li>
+            <li class="list-inline-item">
+                <button class="btn btn-primary"><i class="fa-regular fa-address-book"></i></button>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body p-2">
+        <h1>{{vehicle.Name}}</h1>
+        <h2>{{vehicle.Type}}</h2>
+        <h3>{{vehicle.Price}}</h3>
+    </div>
+</div>
+

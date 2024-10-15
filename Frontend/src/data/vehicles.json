@@ -1,0 +1,58 @@
+[
+      {
+        "Id": 1,
+        "SellBuy": 1,
+        "Name": "Falcon 9",
+        "Type": "Partially Reusable",
+        "Price": 60000000,
+        "Image": "falcon-9.jpg"
+      },
+      {
+        "Id": 2,
+        "SellBuy": 2,
+        "Name": "Falcon Heavy",
+        "Type": "Partially Reusable",
+        "Price": 90000000,
+        "Image": "falcon-heavy.jpg"
+      },
+      {
+        "Id": 3,
+        "SellBuy": 2,
+        "Name": "Electron",
+        "Type": "Expendable",
+        "Price": 8000000,
+        "Image": "electron.jpeg"
+      },
+      {
+        "Id": 4,
+        "SellBuy": 1,
+        "Name": "Vulcan",
+        "Type": "Expendable",
+        "Price": 120000000,
+        "Image": "vulcan.jpg"
+      },
+      {
+        "Id": 5,
+        "SellBuy": 1,
+        "Name": "Starship",
+        "Type": "Fully Reusable",
+        "Price": 20000000,
+        "Image": "starship.jpg"
+      },
+      {
+        "Id": 6,
+        "SellBuy": 1,
+        "Name": "SLS",
+        "Type": "Expendable",
+        "Price": 2000000000,
+        "Image": "sls.jpg"
+      },
+      {
+        "Id": 7,
+        "SellBuy": 2,
+        "Name": "New Glenn",
+        "Type": "Partially Reusable",
+        "Price": 100000000,
+        "Image": "new-glenn.png"
+      }
+    ]
