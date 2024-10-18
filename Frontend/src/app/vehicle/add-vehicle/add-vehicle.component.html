@@ -1,30 +1,136 @@
-<div class="card">
-  <div class="card-header">
-    Add New Lauch Vehicle
+<div class="row mb-5">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-header">
+        <h3>Add new Launch Vehicle</h3>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)='onSubmit()' #Form="ngForm">
+          <div>
+            <tabset #formTabs>
+              <tab heading="Basic Info">
+                <div class="form-group col-12">
+                  <label>Name</label>
+                  <input type="text" class="form-control" #propName="ngModel" ngModel name="Name" required minlength="5"
+                    [(ngModel)]="vehicleView.Name">
+                  <span *ngIf="!propName.valid && propName.touched" class="error-block">
+                    <span *ngIf="propName.hasError('required')">Please provide name</span>
+                    <span *ngIf="propName.hasError('minlength')">Name must be atleast 5 char long</span>
+                  </span>
+                </div>
+
+                <div class="form-group col-12">
+                  <label>Reusability</label>
+                  <div class="btn-group" btnRadioGroup name="reuseType" [(ngModel)]="vehicleView.Reusability">
+                    <label *ngFor="let vtype of vehicleTypes" class="btn btn-outline-primary mr-2" [btnRadio]="vtype"
+                      tabindex="0" role="button" name="Reusability">{{vtype}}
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group col-12">
+                  <label>Payload Capacity (Tons)</label>
+                  <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group col-12">
+                  <label>Price</label>
+                  <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group col-12">
+                  <button type="button" class="btn btn-primary btn-block next-btn" (click)="selectTab(1)">Next</button>
+                </div>
+              </tab>
+
+              <tab heading="Pricing">
+                <div class="form-group col-12">
+                  <label>Price (in USD)</label>
+                  <input type="text" class="form-control" name="price" [(ngModel)]="vehicleView.Price">
+                </div>
+
+                <div class="form-group col-12">
+                  <label>Security (in USD)</label>
+                  <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group col-12">
+                  <button type="button" class="btn btn-primary btn-block next-btn" (click)="selectTab(2)">Next</button>
+
+                  <button type="button" class="btn btn-primary btn-block next-btn" (click)="selectTab(0)">Back</button>
+                </div>
+              </tab>
+
+              <tab heading="Other Details">
+                <div class="form-group col-12">
+                  <label>Operational</label>
+                  <div class="btn-group" btnRadioGroup>
+                    <label class="btn btn-outline-primary" btnRadio="1" role="button" name="Operational">Yes</label>
+
+                    <label class="btn btn-outline-primary" btnRadio="2" role="button" name="Operational">No</label>
+                  </div>
+                </div>
+
+                <div class="form-group col-3">
+                  <label>Avaialble From</label>
+                  <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker
+                    [bsConfig]="{containerClass: 'theme-dark-blue', dateInputFormat: 'DD-MM-YYYY'}">
+                </div>
+
+                <div class="form-group col-12">
+                  <label>Vehicle Height (m)</label>
+                  <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group col-12">
+                  <label>Vehicle Mass (Tons)</label>
+                  <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group col-12">
+                  <label>Fuel</label>
+                  <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group col-12">
+                  <label>Description</label>
+                  <textarea type="text" class="form-control" rows="6"></textarea>
+                </div>
+
+                <div class="form-group col-12">
+                  <button type="button" class="btn btn-primary btn-block next-btn" (click)="selectTab(3)">Next</button>
+
+                  <button type="button" class="btn btn-primary btn-block next-btn" (click)="selectTab(1)">Back</button>
+                </div>
+              </tab>
+
+              <tab heading="Photos">
+                <div class="form-group col-12">
+                  <div class="photo-control">
+                    <button class="mt-5" type="button">Upload</button> <br>
+                    This is under construction
+                  </div>
+                </div>
+                <div class="form-group col-12">
+                  <button type="button" class="btn btn-primary btn-block next-btn" (click)="selectTab(2)">Back</button>
+
+                  <button type="reset" class="btn btn-primary btn-block next-btn">Cancel</button>
+                  <button type="submit" class="btn btn-primary btn-block next-btn">Save</button>
+
+                </div>
+              </tab>
+            </tabset>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-  <div class="card-body">
-    <form (ngSubmit)="onSubmit()" #Form="ngForm">
-      <div class="form-group col-12">
-        <label for="Name">Name</label>
-        <input type="text" class="form-control" #vehicleName="ngModel"
-         ngModel name="Name" required minlength="5">
-        <span *ngIf="!vehicleName.valid && vehicleName.touched" class="error-block">
-          <span *ngIf="vehicleName.errors?.['required']">Please provide a Name</span> 
-          <span *ngIf="vehicleName.errors?.['minlength']">Name must be at least 5 characters long</span>               
-        </span>
+  <div class="col-4">
+    <div class="card-header">
+      <h3>Launch Vehicle Preview</h3>
+      <div>
+        <app-vehicle-card [vehicle]="vehicleView"></app-vehicle-card>
       </div>
-      <div class="form-group col-12">
-        <label for="Type">Type</label>
-        <input type="text" class="form-control" ngModel name="Type">
-      </div>
-      <div class="form-group col-12">
-        <label for="Price">Price</label>
-        <input type="text" class="form-control" ngModel name="Price">
-      </div>
-      <div class="form-group col-12">
-        <button [disabled]="!Form.valid" type="submit" class="btn btn-primary mr-2">Save</button>
-        <button type="reset" class="btn btn-primary">Cancel</button>
-      </div>
-    </form>
+    </div>
   </div>
 </div>

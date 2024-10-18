@@ -11,12 +11,12 @@ export class VehiclesService {
 
   constructor(private http: HttpClient) { }
 
-  getAllVehicles(SellBuy: number): Observable<IVehicle[]>{
+  getAllVehicles(Reusability: number): Observable<IVehicle[]>{
     return this.http.get<IVehicle[]>('data/vehicles.json').pipe(
       map(data => {
         const vehiclesArray: Array<IVehicle> = [];
         for (const id in data) {
-          if (data.hasOwnProperty(id) && data[id].SellBuy === SellBuy) {
+          if (data.hasOwnProperty(id) && data[id].Reusability === Reusability) {
             vehiclesArray.push(data[id]);
           }
         }

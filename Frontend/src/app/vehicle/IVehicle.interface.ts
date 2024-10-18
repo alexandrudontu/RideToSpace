@@ -1,8 +1,9 @@
 export interface IVehicle {
-    Id: number;
-    SellBuy: number;
-    Name: string;
-    Type: string;
-    Price: number;
+    Id: number | null;
+    Reusability: number | null;
+    Name: string | null;
+    Fuel: string | null;
+    PayloadCapToLEO: number | null;
+    Price: number | null;
     Image?: string;
 }
