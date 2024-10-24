@@ -1,106 +1,135 @@
 <div class="row mb-5">
-  <div class="col-8">
+  <div class="col-8 shadow-lg p-0 bg-white">
     <div class="card">
       <div class="card-header">
         <h3>Add new Launch Vehicle</h3>
       </div>
       <div class="card-body">
-        <form (ngSubmit)='onSubmit()' #Form="ngForm">
-          <div>
-            <tabset #formTabs>
-              <tab heading="Basic Info">
+        <form (ngSubmit)='onSubmit()' [formGroup]="addVehicleForm">
+          <div class="tab-panel">
+            <tabset class="member-tabset" #formTabs>
+              <tab heading="Basic Info" formGroupName="BasicInfo">
                 <div class="form-group col-12">
                   <label>Name</label>
-                  <input type="text" class="form-control" #propName="ngModel" ngModel name="Name" required minlength="5"
-                    [(ngModel)]="vehicleView.Name">
-                  <span *ngIf="!propName.valid && propName.touched" class="error-block">
-                    <span *ngIf="propName.hasError('required')">Please provide name</span>
-                    <span *ngIf="propName.hasError('minlength')">Name must be atleast 5 char long</span>
-                  </span>
+                  <input type="text" class="form-control" formControlName="Name">
+                  <div class="error-block" *ngIf="Name?.invalid && (nextClicked || Name?.touched)">
+                    Please enter Vehicle Name
+                  </div>
                 </div>
 
                 <div class="form-group col-12">
-                  <label>Reusability</label>
-                  <div class="btn-group" btnRadioGroup name="reuseType" [(ngModel)]="vehicleView.Reusability">
+                  <p>Reusability</p>
+                  <div class="btn-group" btnRadioGroup formControlName="Reusability">
                     <label *ngFor="let vtype of vehicleTypes" class="btn btn-outline-primary mr-2" [btnRadio]="vtype"
-                      tabindex="0" role="button" name="Reusability">{{vtype}}
+                      tabindex="0" role="button" name="vehType">{{vtype}}
                     </label>
+                  </div>
+                  <div class="error-block" *ngIf="Reusability?.invalid && nextClicked">
+                    Please select Reusability
                   </div>
                 </div>
 
                 <div class="form-group col-12">
                   <label>Payload Capacity (Tons)</label>
-                  <input type="text" class="form-control">
-                </div>
-
-                <div class="form-group col-12">
-                  <label>Price</label>
-                  <input type="text" class="form-control">
-                </div>
-
-                <div class="form-group col-12">
-                  <button type="button" class="btn btn-primary btn-block next-btn" (click)="selectTab(1)">Next</button>
-                </div>
-              </tab>
-
-              <tab heading="Pricing">
-                <div class="form-group col-12">
-                  <label>Price (in USD)</label>
-                  <input type="text" class="form-control" name="price" [(ngModel)]="vehicleView.Price">
-                </div>
-
-                <div class="form-group col-12">
-                  <label>Security (in USD)</label>
-                  <input type="text" class="form-control">
-                </div>
-
-                <div class="form-group col-12">
-                  <button type="button" class="btn btn-primary btn-block next-btn" (click)="selectTab(2)">Next</button>
-
-                  <button type="button" class="btn btn-primary btn-block next-btn" (click)="selectTab(0)">Back</button>
-                </div>
-              </tab>
-
-              <tab heading="Other Details">
-                <div class="form-group col-12">
-                  <label>Operational</label>
-                  <div class="btn-group" btnRadioGroup>
-                    <label class="btn btn-outline-primary" btnRadio="1" role="button" name="Operational">Yes</label>
-
-                    <label class="btn btn-outline-primary" btnRadio="2" role="button" name="Operational">No</label>
+                  <input type="text" class="form-control" formControlName="PayloadCapacity">
+                  <div class="error-block"
+                    *ngIf="PayloadCapacity?.invalid && (nextClicked || PayloadCapacity?.touched)">
+                    Please enter Payload Capacity
                   </div>
                 </div>
 
-                <div class="form-group col-3">
-                  <label>Avaialble From</label>
-                  <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker
-                    [bsConfig]="{containerClass: 'theme-dark-blue', dateInputFormat: 'DD-MM-YYYY'}">
+                <div class="form-group col-12">
+                  <label>Can Launch</label>
+                  <div class="btn-group" btnRadioGroup formControlName="CargoCrew">
+                    <label *ngFor="let ptype of payloadTypes" class="btn btn-outline-primary mr-2" [btnRadio]="ptype"
+                      tabindex="0" role="button" name="CargoCrew">{{ptype}}
+                    </label>
+                  </div>
+                  <div class="error-block" *ngIf="CargoCrew?.invalid && nextClicked">
+                    Please select Payload Type
+                  </div>
+                </div>
+
+                <div class="form-group col-12">
+                  <button type="button" class="btn btn-primary btn-block next-btn"
+                    (click)="selectTab(1, BasicInfo!.valid)">Next</button>
+                </div>
+              </tab>
+
+              <tab heading="Pricing" formGroupName="PriceInfo">
+                <div class="form-group col-12">
+                  <label>Price (in Million USD)</label>
+                  <input type="text" class="form-control" name="price" formControlName="Price">
+                  <div class="error-block" *ngIf="Price?.invalid && (nextClicked || Price?.touched)">
+                    Please enter Price Amount
+                  </div>
+                </div>
+
+                <div class="form-group col-12">
+                  <label>Security (in USD )</label>
+                  <input type="text" class="form-control" name="security" formControlName="Security">
+                  <div class="error-block" *ngIf="Security?.invalid && (nextClicked || Security?.touched)">
+                    Please enter Security Amount
+                  </div>
+                </div>
+
+                <div class="form-group col-12">
+                  <button type="button" class="btn btn-primary btn-block next-btn"
+                    (click)="selectTab(2, PriceInfo!.valid)">Next</button>
+
+                  <button type="button" class="btn btn-primary btn-block next-btn"
+                    (click)="selectTab(0, true)">Back</button>
+                </div>
+              </tab>
+
+              <tab heading="Other Details" formGroupName="OtherDetails">
+                <div class="form-group col-12">
+                  <label>Operational</label>
+                  <div class="btn-group" btnRadioGroup name="operationType" formControlName="Operational">
+                    <label class="btn btn-outline-primary" btnRadio="1" role="button" name="Operational">Yes</label>
+                    <label class="btn btn-outline-primary" btnRadio="2" role="button" name="Upcoming">No</label>
+                  </div>
+                  <div class="error-block" *ngIf="Operational?.invalid && nextClicked">
+                    Please select Operational Status
+                  </div>
                 </div>
 
                 <div class="form-group col-12">
                   <label>Vehicle Height (m)</label>
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" name="height" formControlName="Height">
+                  <div class="error-block" *ngIf="Height?.invalid && (nextClicked || Height?.touched)">
+                    Please enter Vehicle Height
+                  </div>
                 </div>
 
                 <div class="form-group col-12">
                   <label>Vehicle Mass (Tons)</label>
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" name="mass" formControlName="Mass">
+                  <div class="error-block" *ngIf="Mass?.invalid && (nextClicked || Mass?.touched)">
+                    Please enter Vehicle Mass
+                  </div>
                 </div>
 
                 <div class="form-group col-12">
                   <label>Fuel</label>
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" name="fuel" formControlName="Fuel">
+                  <div class="error-block" *ngIf="Fuel?.invalid && (nextClicked || Fuel?.touched)">
+                    Please enter Fuel Used
+                  </div>
                 </div>
 
                 <div class="form-group col-12">
                   <label>Description</label>
-                  <textarea type="text" class="form-control" rows="6"></textarea>
+                  <textarea type="text" class="form-control" rows="6" name="desc"
+                    formControlName="Description"></textarea>
                 </div>
 
                 <div class="form-group col-12">
-                  <button type="button" class="btn btn-primary btn-block next-btn" (click)="selectTab(3)">Next</button>
+                  <button type="button" class="btn btn-primary btn-block next-btn"
+                    (click)="selectTab(3, OtherDetails!.valid)">Next</button>
 
-                  <button type="button" class="btn btn-primary btn-block next-btn" (click)="selectTab(1)">Back</button>
+                  <button type="button" class="btn btn-primary btn-block next-btn"
+                    (click)="selectTab(1, true)">Back</button>
                 </div>
               </tab>
 
@@ -112,7 +141,8 @@
                   </div>
                 </div>
                 <div class="form-group col-12">
-                  <button type="button" class="btn btn-primary btn-block next-btn" (click)="selectTab(2)">Back</button>
+                  <button type="button" class="btn btn-primary btn-block next-btn"
+                    (click)="selectTab(2, true)">Back</button>
 
                   <button type="reset" class="btn btn-primary btn-block next-btn">Cancel</button>
                   <button type="submit" class="btn btn-primary btn-block next-btn">Save</button>
@@ -128,9 +158,9 @@
   <div class="col-4">
     <div class="card-header">
       <h3>Launch Vehicle Preview</h3>
-      <div>
-        <app-vehicle-card [vehicle]="vehicleView"></app-vehicle-card>
-      </div>
+    </div>
+    <div class="shadow-lg p-3 bg-white">
+      <app-vehicle-card [vehicle]="vehicleView" [hideIcons]="true"></app-vehicle-card>
     </div>
   </div>
 </div>

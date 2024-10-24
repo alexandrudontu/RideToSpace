@@ -1,4 +1,4 @@
-.card:hover img{
+.card:hover img {
     transform: scale(1.2,1.2);
     transition-duration: 500ms;
     transition-timing-function: ease-out;
@@ -7,7 +7,21 @@
     opacity: .9;
 }
 
-.card img{
+.card {
+    min-height: 400px;
+}
+
+.card-body h1 {
+    font-family: fantasy;
+    color: rgb(4, 37, 66);
+}
+
+.font-highlight {
+    font-style: italic;
+    color: brown;
+}
+
+.card img {
     transform: scale(1,1);
     transition-duration: 500ms;
     transition-timing-function: ease-out;
@@ -15,12 +29,12 @@
     width:fit-content;
 }
 
-.card-img-wrapper{
+.card-img-wrapper {
     overflow: hidden;
     position: relative;
 }
 
-.member-icons{
+.member-icons {
     position: absolute;
     bottom: -10%;
     left: 0;
@@ -30,11 +44,11 @@
     opacity: 0;
 }
 
-.card-img-wrapper:hover .member-icons{
+.card-img-wrapper:hover .member-icons {
     bottom: 0;
     opacity: 1;
 }
 
-.animate{
+.animate {
     transition: all 0.3s ease-in-out;
 }

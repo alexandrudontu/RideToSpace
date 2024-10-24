@@ -24,7 +24,7 @@ import { AuthService } from './services/auth.service';
 
 const appRoutes: Routes = [
   {path: '', component: VehicleListComponent},
-  {path: 'sell-vehicle', component: VehicleListComponent},
+  {path: 'crew', component: VehicleListComponent},
   {path: 'add-vehicle', component: AddVehicleComponent},
   {path: 'vehicle-detail/:id', component: VehicleDetailComponent},
   {path: 'user/login', component: UserLoginComponent},

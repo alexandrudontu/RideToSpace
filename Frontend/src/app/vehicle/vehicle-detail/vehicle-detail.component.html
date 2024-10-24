@@ -1,15 +1,81 @@
-<p>
-  vehicle-detail works!
-  Selected vehicle id is {{vehicleId}}
-  <br/> <br/>
-  <button (click)="onNext()" class="btn btn-primary">Next</button>
+<div class="row shadow">
+  <div class="col-sm-4 p-0">
+    <div class="card">
+      <div class="card-img-wrapper">
+        <img *ngIf="vehicle.Image" class="card-img-top" src="assets/images/{{vehicle.Image}}">
+        <img *ngIf="!vehicle.Image" class="card-img-top" src="assets/images/default.png">
+      </div>
+      <div class="card-body">
+        <h1 class="card-title">{{vehicle.Name}}</h1>
+        <div>
+          <strong>{{vehicle.Reusability}} Rocket for {{vehicle.CargoCrew}}</strong>
+        </div>
+        <div>
+          <strong>${{vehicle.Price}} Million</strong>
+        </div>
+        <hr>
+        <div>
+          <strong>Payload Capacity: </strong>
+          {{vehicle.PayloadCapacity}} Tons
+        </div>
 
-  <br/> <br/>
-  <button routerLink="/vehicle-detail/1" class="btn btn-primary">1</button>
-  <button routerLink="/vehicle-detail/2" class="btn btn-primary">2</button>
-  <button routerLink="/vehicle-detail/3" class="btn btn-primary">3</button>
-  <button routerLink="/vehicle-detail/4" class="btn btn-primary">4</button>
-  <button routerLink="/vehicle-detail/5" class="btn btn-primary">5</button>
+        <div>
+          <strong>Height: </strong>
+          {{vehicle.Height}} m
+        </div>
+        <div>
+          <strong>Mass: </strong>
+          {{vehicle.Mass}} Tons
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="btn-group d-flex">
+          <button class="btn btn-primary">Like</button>
+          <button class="btn btn-success">Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8 p-0">
+    <div class="tab-panel">
+      <tabset class="member-tabset">
+        <tab heading="Overview">
+          <h1>Overview</h1>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="heading">
+                <strong>Name</strong>
+                <p>{{vehicle.Name}}</p>
+              </div>
 
+              <div class="heading">
+                <strong>Operational?</strong>
+                <p *ngIf="vehicle.Operational">Yes</p>
+                <p *ngIf="!vehicle.Operational">No</p>
+              </div>
 
-</p>
+              <div class="heading">
+                <strong>Fuels used</strong>
+                <p>{{vehicle.Fuel}}</p>
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="heading">
+                <strong>About vehicle</strong>
+                <p>{{vehicle.Description}}</p>
+              </div>
+            </div>
+          </div>
+        </tab>
+        <tab heading="Photos">
+          <h1>Photos</h1>
+        </tab>
+        <tab heading="Contact">
+          <h1>Contact Detail</h1>
+          This should be restricted area and only registered user should be able to see seller contact details
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</div>

@@ -2,6 +2,7 @@
 @import 'assets/forms.css';
 @import '../node_modules/alertifyjs/build/css/alertify.min.css';
 @import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+@import 'assets/tabs.css';
 
 .btn {
     margin: 20px 5px;

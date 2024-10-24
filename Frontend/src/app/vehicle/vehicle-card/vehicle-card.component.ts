@@ -1,14 +1,13 @@
 import { Component, Input } from "@angular/core";
-import { IVehicle } from "../IVehicle.interface";
+import { IVehicleBase } from "src/app/model/ivehiclebase";
 
 
 @Component({
     selector: 'app-vehicle-card',
-    //template: `<h1>I am a card</h1>`,
     templateUrl: './vehicle-card.component.html',
-    //styles: ['h1 {font-weight: normal;}']
     styleUrls: ['./vehicle-card.component.css']
 })
 export class VehicleCardComponent {
-    @Input() vehicle!: IVehicle;
+    @Input() vehicle!: IVehicleBase;
+    @Input() hideIcons!: boolean;
 }
