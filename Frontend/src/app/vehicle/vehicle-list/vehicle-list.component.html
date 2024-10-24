@@ -1,5 +1,21 @@
+<label>Filter Propellant</label>
+<input [(ngModel)]="Fuel">
+<button type="button" (click)="onFuelFilter()">Search</button>
+<button type="button" (click)="onFuelFilterClear()">Clear</button>
+
+<label>Sort by &nbsp;</label>
+<select [(ngModel)]='SortbyParam'>
+    <option value="Price">Price</option>
+    <option value="PayloadCapacity">Payload Capacity</option>
+</select>
+<button type="button" (click)="onSortDirection()">
+    <i *ngIf="SortDirection==='asc'" class="fas fa-sort-alpha-down"></i>
+    <i *ngIf="SortDirection==='desc'" class="fas fa-sort-alpha-up"></i>
+</button>
+
 <div class="row">
-    <div *ngFor="let vehicle of vehicles" class="shadow-lg col-sm-4 p-3">
+    <div *ngFor="let vehicle of vehicles | filter:SearchFuel:'Fuel'|sort:[SortbyParam, SortDirection]"
+        class="shadow-lg col-sm-4 p-3">
         <app-vehicle-card [vehicle]="vehicle"></app-vehicle-card>
     </div>
 </div>

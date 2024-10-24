@@ -21,12 +21,22 @@ import { UserRegisterComponent } from './user/user-register/user-register.compon
 import { UserService } from './services/user.service';
 import { AlertifyService } from './services/alertify.service';
 import { AuthService } from './services/auth.service';
+import { VehicleDetailResolverService } from './vehicle/vehicle-detail/vehicle-detail-resolver.service';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { FilterPipe } from './pipes/filter.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 const appRoutes: Routes = [
   {path: '', component: VehicleListComponent},
   {path: 'crew', component: VehicleListComponent},
   {path: 'add-vehicle', component: AddVehicleComponent},
-  {path: 'vehicle-detail/:id', component: VehicleDetailComponent},
+  { 
+    path: 'vehicle-detail/:id', 
+    component: VehicleDetailComponent, 
+    resolve: {
+      veh: VehicleDetailResolverService
+    }
+  },
   {path: 'user/login', component: UserLoginComponent},
   {path: 'user/register', component: UserRegisterComponent},
   {path: '**', component: VehicleListComponent}
@@ -41,7 +51,9 @@ const appRoutes: Routes = [
     AddVehicleComponent,
     VehicleDetailComponent,
     UserLoginComponent,
-    UserRegisterComponent
+    UserRegisterComponent,
+    FilterPipe,
+    SortPipe
    ],
   imports: [
     BrowserModule,
@@ -53,13 +65,15 @@ const appRoutes: Routes = [
     BsDropdownModule,
     TabsModule,
     ButtonsModule,
-    BsDatepickerModule
+    BsDatepickerModule,
+    NgxGalleryModule
   ],
   providers: [
     VehiclesService,
     UserService,
     AlertifyService,
-    AuthService
+    AuthService,
+    VehicleDetailResolverService
   ],
   bootstrap: [AppComponent]
 })

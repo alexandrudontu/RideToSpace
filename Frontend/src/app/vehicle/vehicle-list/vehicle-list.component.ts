@@ -11,6 +11,11 @@ import { IVehicleBase } from 'src/app/model/ivehiclebase';
 export class VehicleListComponent implements OnInit {
   CargoCrew = "Cargo";
   vehicles!: IVehicleBase[];
+  Today = new Date();
+  Fuel = '';
+  SearchFuel = '';
+  SortbyParam = '';
+  SortDirection = 'asc';
 
   constructor(private route: ActivatedRoute, private vehiclesService: VehiclesService) { }
 
@@ -27,5 +32,22 @@ export class VehicleListComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  onFuelFilter() {
+    this.SearchFuel = this.Fuel;
+  }
+
+  onFuelFilterClear() {
+    this.SearchFuel = '';
+    this.Fuel = '';
+  }
+
+  onSortDirection() {
+    if (this.SortDirection === 'desc') {
+      this.SortDirection = 'asc';
+    } else {
+      this.SortDirection = 'desc';
+    }
   }
 }

@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import { IVehicleBase } from '../model/ivehiclebase';
-import { IVehicle } from '../model/ivehicle';
 import { Vehicle } from '../model/vehicle';
 
 
@@ -21,38 +19,46 @@ export class VehiclesService {
     );
   }
 
-  getAllVehicles(CargoCrew?: string): Observable<IVehicleBase[]>{
-    return this.http.get<IVehicleBase[]>('data/vehicles.json').pipe(
+  getAllVehicles(CargoCrew?: string): Observable<Vehicle[]> {
+    return this.http.get<{ [key: string]: Vehicle }>('data/vehicles.json').pipe(
       map(data => {
-        const vehiclesArray: Array<IVehicleBase> = [];
+        const vehiclesArray: Array<Vehicle> = [];
         const localVehicles = localStorage.getItem('newVeh');
         const parsedLocalVehicles = localVehicles ? JSON.parse(localVehicles) : [];
-        if(parsedLocalVehicles) {
+  
+        if (parsedLocalVehicles) {
           for (const id in parsedLocalVehicles) {
-            if(CargoCrew) {
-              if (parsedLocalVehicles.hasOwnProperty(id) && parsedLocalVehicles[id].CargoCrew === CargoCrew) {
+            if (parsedLocalVehicles.hasOwnProperty(id)) {
+              if (CargoCrew === 'Cargo & Crew' && parsedLocalVehicles[id].CargoCrew === 'Cargo & Crew') {
                 vehiclesArray.push(parsedLocalVehicles[id]);
               }
-            } else {
-              vehiclesArray.push(parsedLocalVehicles[id]);
+              else if (CargoCrew === 'Cargo' && (parsedLocalVehicles[id].CargoCrew === 'Cargo' || parsedLocalVehicles[id].CargoCrew === 'Cargo & Crew')) {
+                vehiclesArray.push(parsedLocalVehicles[id]);
+              }
+              else if (!CargoCrew) {
+                vehiclesArray.push(parsedLocalVehicles[id]);
+              }
             }
           }
         }
-
+  
         for (const id in data) {
-          if(CargoCrew) {
-            if (data.hasOwnProperty(id) && data[id].CargoCrew === CargoCrew) {
+          if (data.hasOwnProperty(id)) {
+            if (CargoCrew === 'Cargo & Crew' && data[id].CargoCrew === 'Cargo & Crew') {
               vehiclesArray.push(data[id]);
             }
-          } else {
-            vehiclesArray.push(data[id]);
+            else if (CargoCrew === 'Cargo' && (data[id].CargoCrew === 'Cargo' || data[id].CargoCrew === 'Cargo & Crew')) {
+              vehiclesArray.push(data[id]);
+            }
+            else if (!CargoCrew) {
+              vehiclesArray.push(data[id]);
+            }
           }
         }
-
         return vehiclesArray;
       })
     );
-    return this.http.get<IVehicle[]>('data/vehicles.json');
+    return this.http.get<Vehicle[]>('data/vehicles.json');
   }
 
   addVehicle(vehicle: Vehicle) {
