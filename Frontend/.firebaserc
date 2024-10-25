@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "rts-ang",
+    "prod": "rts-ang"
+  },
+  "targets": {},
+  "etags": {}
+}

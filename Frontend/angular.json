@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ride-to-space-app": {
+    "rts": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ride-to-space-app",
+            "outputPath": "dist/rts",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ride-to-space-app:build:production"
+              "browserTarget": "rts:build:production"
             },
             "development": {
-              "browserTarget": "ride-to-space-app:build:development"
+              "browserTarget": "rts:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ride-to-space-app:build"
+            "browserTarget": "rts:build"
           }
         },
         "test": {
