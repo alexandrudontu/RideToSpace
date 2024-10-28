@@ -11,6 +11,10 @@ export class VehiclesService {
 
   constructor(private http: HttpClient) { }
 
+  getAllFuels(): Observable<string[]> {
+    return this.http.get<string[]>('http://localhost:5085/api/fuel')
+  }
+
   getVehicle(id: number) {
     return this.getAllVehicles().pipe(
       map(vehiclesArray => {

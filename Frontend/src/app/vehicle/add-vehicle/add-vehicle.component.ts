@@ -22,12 +22,13 @@ export class AddVehicleComponent implements OnInit {
 
   vehicleTypes: Array<string> = ['Expendable', 'Partially Reusable', 'Fully Reusable'];
   payloadTypes: Array<string> = ['Cargo', 'Cargo & Crew'];
+  fuelList: any[] = [];
 
   vehicleView: IVehicleBase = {
     Id: null,
     Reusability: null,
     Name: '',
-    Fuel: null,
+    Fuel: '',
     PayloadCapacity: null,
     Price: null,
     CargoCrew: '',
@@ -46,6 +47,12 @@ export class AddVehicleComponent implements OnInit {
   ngOnInit() {
     this.createAddVehicleForm();
     this.onFormValueChanges();
+    this.VehiclesService.getAllFuels().subscribe(data => {
+      this.fuelList = data;
+      console.log(data);
+    }
+
+    )
   }
 
   createAddVehicleForm() {

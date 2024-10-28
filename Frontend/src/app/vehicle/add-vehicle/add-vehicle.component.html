@@ -112,7 +112,10 @@
 
                 <div class="form-group col-12">
                   <label>Fuel</label>
-                  <input type="text" class="form-control" name="fuel" formControlName="Fuel">
+                  <select class="form-control" formControlName="Fuel" [(ngModel)]="vehicleView.Fuel">
+                    <option value="">--Select Fuel--</option>
+                    <option *ngFor="let fuel of fuelList" value={{fuel.id}}>{{fuel.name}}</option>
+                  </select>
                   <div class="error-block" *ngIf="Fuel?.invalid && (nextClicked || Fuel?.touched)">
                     Please enter Fuel Used
                   </div>
