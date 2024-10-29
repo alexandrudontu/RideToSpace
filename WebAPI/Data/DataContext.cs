@@ -8,6 +8,8 @@ namespace WebAPI.Data
         public DataContext(DbContextOptions<DataContext> options): base(options) { }
         
         public DbSet<Fuel> Fuels { get; set; }
+        public DbSet<User> Users { get; set; }
+
     }
 }
      

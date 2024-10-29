@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.DTOs;
@@ -7,9 +8,8 @@ using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class FuelController : ControllerBase
+    [Authorize]
+    public class FuelController : BaseController
     {
         private readonly IUnitOfWork uow;
         private readonly IMapper mapper;
@@ -22,6 +22,7 @@ namespace WebAPI.Controllers
 
         // GET api/fuel
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetFuels()
         {
             var fuels = await uow.FuelRepository.GetAllFuelsAsync();
@@ -42,8 +43,20 @@ namespace WebAPI.Controllers
         [HttpPut("update/{id}")]
         public async Task<IActionResult> UpdateFuel(int id, FuelDto fuelDto)
         {
+            if (id != fuelDto.Id)
+            {
+                return BadRequest("Update not allowed");
+            }
+
             var fuelFromDb = await uow.FuelRepository.FindFuel(id);
+            if(fuelFromDb == null)
+            {
+                return BadRequest("Update not allowed");
+            }
             mapper.Map(fuelDto, fuelFromDb);
+
+            throw new Exception("Something went wrong");
+
             await uow.SaveAsync();
             return StatusCode(200);
         }

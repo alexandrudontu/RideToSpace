@@ -1,7 +1,12 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using WebAPI.Data;
+using WebAPI.Extensions;
 using WebAPI.Helpers;
 using WebAPI.Interfaces;
+using WebAPI.Middleware;
 
 namespace WebAPI
 {
@@ -28,15 +33,36 @@ namespace WebAPI
             builder.Services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+            var secretKey = builder.Configuration.GetSection("AppSettings:Key").Value;
+            var key = new SymmetricSecurityKey(Encoding.UTF8
+                .GetBytes(secretKey));
+
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(opt =>
+                {
+                    opt.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
+                        IssuerSigningKey = key
+                    };
+                });
+
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-               
+
+            // app.ConfigureExceptionHandler(app.Environment);
+
+            app.UseMiddleware<ExceptionMiddleware>();
+                                                              
             app.UseCors("MyPolicy");
 
-            app.UseAuthorization();
+            app.UseAuthentication();
 
+            app.UseAuthorization();
 
             app.MapControllers();
 
