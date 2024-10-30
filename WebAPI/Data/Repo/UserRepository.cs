@@ -15,9 +15,9 @@ namespace WebAPI.Data.Repo
         {
             this.dc = dc;
         }
-        public async Task<User> Authenticate(string username, string passwordText)
+        public async Task<User> Authenticate(string email, string passwordText)
         {
-            var user = await dc.Users.FirstOrDefaultAsync(x => x.UserName == username);
+            var user = await dc.Users.FirstOrDefaultAsync(x => x.Email == email);
 
             if (user == null || user.PasswordKey == null)
             {
@@ -32,7 +32,7 @@ namespace WebAPI.Data.Repo
 
         private bool MatchPasswordHash(string passwordText, byte[] password, byte[] passwordKey)
         {
-            using (var hmac = new HMACSHA3_512(passwordKey))
+            using (var hmac = new HMACSHA512(passwordKey))
             {
                 var passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(passwordText));
 
@@ -45,27 +45,28 @@ namespace WebAPI.Data.Repo
             }
         }
 
-        public void Register(string username, string password)
+        public void Register(string userName, string email, string password)
         {
             byte[] passwordHash, passwordKey;
 
-            using (var hmac = new HMACSHA3_512())
+            using (var hmac = new HMACSHA512())
             {
                 passwordKey = hmac.Key;
                 passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
             }
 
             User user = new User();
-            user.UserName = username;
+            user.UserName = userName;
+            user.Email = email;
             user.Password = passwordHash;
             user.PasswordKey = passwordKey;
 
             dc.Users.Add(user);
         }
 
-        public async Task<bool> UserAlreadyExists(string username)
+        public async Task<bool> UserAlreadyExists(string email)
         {
-            return await dc.Users.AnyAsync(x => x.UserName == username);
+            return await dc.Users.AnyAsync(x => x.Email == email);
         }
     }
 }

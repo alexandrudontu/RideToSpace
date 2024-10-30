@@ -4,9 +4,9 @@ namespace WebAPI.Interfaces
 {
     public interface IUserRepository
     {
-        Task<User> Authenticate(string username, string password);
-        void Register(string username, string password);
+        Task<User> Authenticate(string email, string password);
+        void Register(string userName, string email, string password);
 
-        Task<bool> UserAlreadyExists(string username);
+        Task<bool> UserAlreadyExists(string email);
     }
 }

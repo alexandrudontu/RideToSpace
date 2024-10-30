@@ -4,6 +4,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using WebAPI.DTOs;
+using WebAPI.Errors;
+using WebAPI.Extensions;
 using WebAPI.Interfaces;
 using WebAPI.Models;
 
@@ -23,28 +25,44 @@ namespace WebAPI.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginReqDto loginReq)
         {
-            var user = await uow.UserRepository.Authenticate(loginReq.UserName, loginReq.Password);
+            var user = await uow.UserRepository.Authenticate(loginReq.Email, loginReq.Password);
+            ApiError apiError = new ApiError();
 
             if (user == null)
             {
-                return Unauthorized();
+                apiError.ErrorCode = Unauthorized().StatusCode;
+                apiError.ErrorMessage = "Invalid email or password";
+                apiError.ErrorDetails = "This error appears when provided user id or password does not exist";
+                return Unauthorized(apiError);
             }
 
             var loginRes = new LoginResDto();
-            loginRes.UserName = user.UserName;
+            loginRes.Email = user.Email;
             loginRes.Token = CreateJWT(user);
             return Ok(loginRes);
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register(LoginReqDto loginReq)
+        public async Task<IActionResult> Register(RegisterReqDto registerReq)
         {
-            if(await uow.UserRepository.UserAlreadyExists(loginReq.UserName))
+            ApiError apiError = new ApiError();
+
+            if (registerReq.Email.IsEmpty() ||
+                registerReq.Password.IsEmpty())
             {
-                return BadRequest("User already exists");
+                apiError.ErrorCode = BadRequest().StatusCode;
+                apiError.ErrorMessage = "Email or password cannot be blank";
+                return BadRequest(apiError);
             }
 
-            uow.UserRepository.Register(loginReq.UserName, loginReq.Password);
+            if (await uow.UserRepository.UserAlreadyExists(registerReq.Email))
+            {
+                apiError.ErrorCode = BadRequest().StatusCode;
+                apiError.ErrorMessage = "User already exists, please try a different email";
+                return BadRequest(apiError);
+            }
+
+            uow.UserRepository.Register(registerReq.userName, registerReq.Email, registerReq.Password);
             await uow.SaveAsync();
             return StatusCode(201);
         }
@@ -56,7 +74,7 @@ namespace WebAPI.Controllers
                 .GetBytes(secretKey));
 
             var claims = new Claim[] {
-                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.Email, user.Email),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
             };
 

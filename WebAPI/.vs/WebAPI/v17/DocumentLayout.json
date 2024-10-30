@@ -3,28 +3,83 @@
   "WorkspaceRootPath": "C:\\Users\\alexa\\RTS\\WebAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\data\\repo\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:data\\repo\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\extensions\\stringextentions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:extensions\\stringextentions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\errors\\apierror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:errors\\apierror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_8K6LDNS_SQLEXPRESS/rts/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\dtos\\loginreqdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:dtos\\loginreqdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\dtos\\registerresdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:dtos\\registerresdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\dtos\\loginresdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:dtos\\loginresdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\dtos\\registerreqdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:dtos\\registerreqdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\data\\repo\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:data\\repo\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\helpers\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:helpers\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\data\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:data\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\extensions\\exceptionmiddlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:extensions\\exceptionmiddlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\controllers\\fuelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:controllers\\fuelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\dtos\\fuelupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,36 +98,12 @@
       "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\extensions\\exceptionmiddlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:extensions\\exceptionmiddlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\controllers\\fuelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:controllers\\fuelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\helpers\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:helpers\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\data\\repo\\fuelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:data\\repo\\fuelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\interfaces\\ifuelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:interfaces\\ifuelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|c:\\users\\alexa\\rts\\webapi\\data\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FEB2F0A-F1E1-47EF-AE69-1204960ED666}|WebAPI.csproj|solutionrelative:data\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_8K6LDNS_SQLEXPRESS/rts/True/SqlTable/dbo.Fuels.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
@@ -85,76 +116,177 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Interfaces\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "Interfaces\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Interfaces\\IUserRepository.cs",
-              "RelativeToolTip": "Interfaces\\IUserRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA2AAAA",
+              "DocumentIndex": 1,
+              "Title": "StringExtentions.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Extensions\\StringExtentions.cs",
+              "RelativeDocumentMoniker": "Extensions\\StringExtentions.cs",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Extensions\\StringExtentions.cs",
+              "RelativeToolTip": "Extensions\\StringExtentions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T15:44:23.598Z",
+              "WhenOpened": "2024-10-30T15:42:39.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApiError.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Errors\\ApiError.cs",
+              "RelativeDocumentMoniker": "Errors\\ApiError.cs",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Errors\\ApiError.cs",
+              "RelativeToolTip": "Errors\\ApiError.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T14:48:40.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegisterResDto.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\DTOs\\RegisterResDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\RegisterResDto.cs",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\DTOs\\RegisterResDto.cs",
+              "RelativeToolTip": "DTOs\\RegisterResDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T10:40:16.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegisterReqDto.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\DTOs\\RegisterReqDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\RegisterReqDto.cs",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\DTOs\\RegisterReqDto.cs",
+              "RelativeToolTip": "DTOs\\RegisterReqDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T10:38:37.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dbo.Users [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_8K6LDNS_SQLEXPRESS/rts/True/SqlTable/dbo.Users.sql",
+              "ToolTip": "dbo.Users [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-10-30T10:11:51.742Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Data\\Repo\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Data\\Repo\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Data\\Repo\\UserRepository.cs",
-              "RelativeToolTip": "Data\\Repo\\UserRepository.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAIwB0AAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T15:40:12.513Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAUwDAAAAAjAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAmwDUAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-29T15:53:11.428Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "WebAPI",
-              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\WebAPI.csproj",
-              "RelativeDocumentMoniker": "WebAPI.csproj",
-              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\WebAPI.csproj",
-              "RelativeToolTip": "WebAPI.csproj",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-29T15:36:46.629Z",
+              "DocumentIndex": 8,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Data\\Repo\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Data\\Repo\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Data\\Repo\\UserRepository.cs",
+              "RelativeToolTip": "Data\\Repo\\UserRepository.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAYwAkAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T15:40:12.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "Interfaces\\IUserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T15:44:23.598Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "LoginReqDto.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\DTOs\\LoginReqDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\LoginReqDto.cs",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\DTOs\\LoginReqDto.cs",
+              "RelativeToolTip": "DTOs\\LoginReqDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAUAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T08:53:03.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginResDto.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\DTOs\\LoginResDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\LoginResDto.cs",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\DTOs\\LoginResDto.cs",
+              "RelativeToolTip": "DTOs\\LoginResDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T09:11:19.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Data\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Data\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Data\\UnitOfWork.cs",
+              "RelativeToolTip": "Data\\UnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T16:57:11.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAYwDEAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T09:12:55.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
               "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAgwAsAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-29T12:26:05.131Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "ExceptionMiddleware.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Middleware\\ExceptionMiddleware.cs",
               "RelativeDocumentMoniker": "Middleware\\ExceptionMiddleware.cs",
@@ -162,11 +294,51 @@
               "RelativeToolTip": "Middleware\\ExceptionMiddleware.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T12:05:19.475Z"
+              "WhenOpened": "2024-10-29T12:05:19.475Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
+              "Title": "AutoMapperProfiles.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Helpers\\AutoMapperProfiles.cs",
+              "RelativeDocumentMoniker": "Helpers\\AutoMapperProfiles.cs",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Helpers\\AutoMapperProfiles.cs",
+              "RelativeToolTip": "Helpers\\AutoMapperProfiles.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T18:02:43.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ExceptionMiddlewareExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Extensions\\ExceptionMiddlewareExtensions.cs",
+              "RelativeDocumentMoniker": "Extensions\\ExceptionMiddlewareExtensions.cs",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Extensions\\ExceptionMiddlewareExtensions.cs",
+              "RelativeToolTip": "Extensions\\ExceptionMiddlewareExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T11:47:57.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Interfaces\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Interfaces\\IUnitOfWork.cs",
+              "RelativeToolTip": "Interfaces\\IUnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAUAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T16:54:48.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "FuelUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\DTOs\\FuelUpdateDto.cs",
               "RelativeDocumentMoniker": "DTOs\\FuelUpdateDto.cs",
@@ -178,7 +350,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 19,
+              "Title": "WebAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\WebAPI.csproj",
+              "RelativeDocumentMoniker": "WebAPI.csproj",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\WebAPI.csproj",
+              "RelativeToolTip": "WebAPI.csproj",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-29T15:36:46.629Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-30T08:57:47.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "FuelDto.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\DTOs\\FuelDto.cs",
               "RelativeDocumentMoniker": "DTOs\\FuelDto.cs",
@@ -190,7 +387,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
+              "Title": "FuelController.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Controllers\\FuelController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FuelController.cs",
+              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Controllers\\FuelController.cs",
+              "RelativeToolTip": "Controllers\\FuelController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABcAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T09:17:03.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "IFuelRepository.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Interfaces\\IFuelRepository.cs",
               "RelativeDocumentMoniker": "Interfaces\\IFuelRepository.cs",
@@ -202,7 +412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 23,
               "Title": "DataContext.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Data\\DataContext.cs",
               "RelativeDocumentMoniker": "Data\\DataContext.cs",
@@ -214,7 +424,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 21,
               "Title": "Fuel.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Models\\Fuel.cs",
               "RelativeDocumentMoniker": "Models\\Fuel.cs",
@@ -226,67 +436,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "FuelController.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Controllers\\FuelController.cs",
-              "RelativeDocumentMoniker": "Controllers\\FuelController.cs",
-              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Controllers\\FuelController.cs",
-              "RelativeToolTip": "Controllers\\FuelController.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAgwDkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T09:17:03.087Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAYwDEAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T09:12:55.913Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ExceptionMiddlewareExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Extensions\\ExceptionMiddlewareExtensions.cs",
-              "RelativeDocumentMoniker": "Extensions\\ExceptionMiddlewareExtensions.cs",
-              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Extensions\\ExceptionMiddlewareExtensions.cs",
-              "RelativeToolTip": "Extensions\\ExceptionMiddlewareExtensions.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBoAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T11:47:57.609Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AutoMapperProfiles.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Helpers\\AutoMapperProfiles.cs",
-              "RelativeDocumentMoniker": "Helpers\\AutoMapperProfiles.cs",
-              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Helpers\\AutoMapperProfiles.cs",
-              "RelativeToolTip": "Helpers\\AutoMapperProfiles.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T18:02:43.436Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "IUnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Interfaces\\IUnitOfWork.cs",
-              "RelativeDocumentMoniker": "Interfaces\\IUnitOfWork.cs",
-              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Interfaces\\IUnitOfWork.cs",
-              "RelativeToolTip": "Interfaces\\IUnitOfWork.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T16:54:48.072Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 24,
               "Title": "FuelRepository.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Data\\Repo\\FuelRepository.cs",
               "RelativeDocumentMoniker": "Data\\Repo\\FuelRepository.cs",
@@ -298,24 +448,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 26,
               "Title": "dbo.Fuels [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_8K6LDNS_SQLEXPRESS/rts/True/SqlTable/dbo.Fuels.sql",
               "ToolTip": "dbo.Fuels [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
               "WhenOpened": "2024-10-28T15:59:43.727Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\RTS\\WebAPI\\Data\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "Data\\UnitOfWork.cs",
-              "ToolTip": "C:\\Users\\alexa\\RTS\\WebAPI\\Data\\UnitOfWork.cs",
-              "RelativeToolTip": "Data\\UnitOfWork.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T16:57:11.974Z"
             }
           ]
         }

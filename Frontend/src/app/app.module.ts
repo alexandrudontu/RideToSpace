@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,13 +18,13 @@ import { AddVehicleComponent } from './vehicle/add-vehicle/add-vehicle.component
 import { VehicleDetailComponent } from './vehicle/vehicle-detail/vehicle-detail.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
-import { UserService } from './services/user.service';
 import { AlertifyService } from './services/alertify.service';
 import { AuthService } from './services/auth.service';
 import { VehicleDetailResolverService } from './vehicle/vehicle-detail/vehicle-detail-resolver.service';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortPipe } from './pipes/sort.pipe';
+import { HttpErrorInterceptorService } from './services/httperror-interceptor.service';
 
 const appRoutes: Routes = [
   {path: '', component: VehicleListComponent},
@@ -69,8 +69,12 @@ const appRoutes: Routes = [
     NgxGalleryModule
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptorService,
+      multi: true
+    },
     VehiclesService,
-    UserService,
     AlertifyService,
     AuthService,
     VehicleDetailResolverService

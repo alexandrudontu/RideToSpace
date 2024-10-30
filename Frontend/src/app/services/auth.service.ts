@@ -1,19 +1,23 @@
 import { JsonPipe } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {environment} from '../../environments/environment';
+import { UserForLogin, UserForRegister } from '../model/user';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-constructor() { }
+  baseUrl = environment.baseUrl;
+  constructor(private http: HttpClient) { }
 
-authUser(user: any) {
-  let userArray = [];
-  if(localStorage.getItem('Users')) {
-    userArray = JSON.parse(localStorage.getItem('Users') || '[]');
+  authUser(user: UserForLogin): Observable<UserForLogin> {
+    return this.http.post<UserForLogin>(this.baseUrl + '/api/account/login', user);
   }
-  return userArray.find((p: { email: any; password: any; }) => p.email === user.email && p.password === user.password);
-}
 
+  registerUser(user: UserForRegister) {
+    return this.http.post(this.baseUrl + '/api/account/register', user);
+  }
 }

@@ -21,7 +21,7 @@ namespace WebAPI.Controllers
         }
 
         // GET api/fuel
-        [HttpGet]
+        [HttpGet("cities")]
         [AllowAnonymous]
         public async Task<IActionResult> GetFuels()
         {
