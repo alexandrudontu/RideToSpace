@@ -9,7 +9,7 @@ import { IVehicleBase } from 'src/app/model/ivehiclebase';
   styleUrls: ['./vehicle-list.component.css']
 })
 export class VehicleListComponent implements OnInit {
-  CargoCrew = "Cargo";
+  Crew = false;
   vehicles!: IVehicleBase[];
   Today = new Date();
   Fuel = '';
@@ -21,9 +21,9 @@ export class VehicleListComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.route.snapshot.url.toString()) {
-      this.CargoCrew = "Cargo & Crew";
+      this.Crew = true;
     }
-    this.vehiclesService.getAllVehicles(this.CargoCrew).subscribe(
+    this.vehiclesService.getAllVehicles(this.Crew).subscribe(
       data => {
         this.vehicles = data;
         

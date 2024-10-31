@@ -112,7 +112,7 @@
 
                 <div class="form-group col-12">
                   <label>Fuel</label>
-                  <select class="form-control" formControlName="Fuel" [(ngModel)]="vehicleView.Fuel">
+                  <select class="form-control" formControlName="Fuel" [(ngModel)]="vehicleView.fuel">
                     <option value="">--Select Fuel--</option>
                     <option *ngFor="let fuel of fuelList" value={{fuel.id}}>{{fuel.name}}</option>
                   </select>

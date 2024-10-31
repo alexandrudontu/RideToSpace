@@ -1,10 +1,10 @@
 <div class="card">
     <div class="card-img-wrapper">
-        <img *ngIf="vehicle.Image" class="card-img-top rounded mx-auto d-block" src="assets/images/{{vehicle.Image}}">
-        <img *ngIf="!vehicle.Image" class="card-img-top rounded mx-auto d-block" src="assets/images/default.png">
+        <img *ngIf="vehicle.image" class="card-img-top rounded mx-auto d-block" src="assets/images/{{vehicle.image}}">
+        <img *ngIf="!vehicle.image" class="card-img-top rounded mx-auto d-block" src="assets/images/default.png">
         <ul *ngIf="!hideIcons" class="list-inline text-center member-icons animate">
             <li class="list-inline-item">
-                <button class="btn btn-primary" routerLink="/vehicle-detail/{{vehicle.Id}}"><i
+                <button class="btn btn-primary" routerLink="/vehicle-detail/{{vehicle.id}}"><i
                         class="fa-solid fa-circle-info"></i></button>
             </li>
             <li class="list-inline-item">
@@ -13,17 +13,17 @@
         </ul>
     </div>
     <div class="card-body p-1">
-        <h1 class="mb-0">{{vehicle.Name}}</h1>
-        {{vehicle.Reusability}}
+        <h1 class="mb-0">{{vehicle.name}}</h1>
+        {{vehicle.reusability}}
 
         <h6 class="mt-2">Can Launch:
-            <span *ngIf="vehicle.CargoCrew === 'Cargo'">Cargo Only</span>
-            <span *ngIf="vehicle.CargoCrew === 'Cargo & Crew'">Cargo & Crew</span>
+            <span *ngIf="vehicle.crew === false">Cargo Only</span>
+            <span *ngIf="vehicle.crew === true">Cargo & Crew</span>
         </h6>
 
         <hr class="mt-0 mb-2">
 
-        <h6 class="mb-0">Price: <span class="font-highlight">${{vehicle.Price}} Million </span> |
-            Payload Capacity: <span class="font-highlight">{{vehicle.PayloadCapacity}} T</span> </h6>
+        <h6 class="mb-0">Price: <span class="font-highlight">${{vehicle.price}} Million </span> |
+            Payload Capacity: <span class="font-highlight">{{vehicle.payloadCapacity}} T</span> </h6>
     </div>
 </div>

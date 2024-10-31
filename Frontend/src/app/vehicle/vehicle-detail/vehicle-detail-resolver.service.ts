@@ -15,18 +15,18 @@ resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<V
   const vehicleId = +route.params['id'];
 
   return this.vehiclesService.getVehicle(vehicleId).pipe(
-    map(vehicle => {
+    map((vehicle: Vehicle | undefined) => {
       if (vehicle) {
-        return vehicle; 
+        return vehicle;
       } else {
         this.router.navigate(['/']);
         throw new Error('Vehicle not found');
       }
     }),
-    catchError(err => {
+    catchError((err: any) => {
       console.error('Error in resolver:', err);
-      this.router.navigate(['/']); 
-      return of(); 
+      this.router.navigate(['/']);
+      return throwError(() => new Error('Vehicle retrieval failed'));
     })
   );
 }

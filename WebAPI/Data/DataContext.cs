@@ -9,7 +9,8 @@ namespace WebAPI.Data
         
         public DbSet<Fuel> Fuels { get; set; }
         public DbSet<User> Users { get; set; }
-
+        public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<Reusability> Reusabilities { get; set; }
     }
 }
      

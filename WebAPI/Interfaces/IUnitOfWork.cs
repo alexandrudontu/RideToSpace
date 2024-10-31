@@ -4,6 +4,7 @@
     {
         IFuelRepository FuelRepository { get; }
         IUserRepository UserRepository { get; }
+        IVehicleRepository VehicleRepository { get; }
         Task<bool> SaveAsync();
     }
 }

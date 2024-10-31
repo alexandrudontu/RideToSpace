@@ -7,8 +7,8 @@ export class FilterPipe implements PipeTransform {
 
   transform(value: any[], filterString: string, vehName: string): any[] {
     const resultArray = [];
-    if(value.length === 0 || filterString === '' || vehName === '') {
-      return value;
+    if(!value || value.length === 0 || !filterString || !vehName) {
+      return value || [];
     }
 
     for(const item of value) {

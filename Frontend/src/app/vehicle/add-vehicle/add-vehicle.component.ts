@@ -25,18 +25,18 @@ export class AddVehicleComponent implements OnInit {
   fuelList: any[] = [];
 
   vehicleView: IVehicleBase = {
-    Id: null,
-    Reusability: null,
-    Name: '',
-    Fuel: '',
-    PayloadCapacity: null,
-    Price: null,
-    CargoCrew: '',
-    Operational: null,
-    Security: null,
-    Height: null,
-    Mass: null,
-    Description: null
+    id: null,
+    reusability: null,
+    name: '',
+    fuel: '',
+    payloadCapacity: null,
+    price: null,
+    crew: false,
+    operational: null,
+    security: null,
+    height: null,
+    mass: null,
+    description: null
   };
 
   constructor(private fb: FormBuilder, 
@@ -80,18 +80,18 @@ export class AddVehicleComponent implements OnInit {
   onFormValueChanges() {
     this.addVehicleForm.valueChanges.subscribe(val => {
       this.vehicleView = {
-        Id: this.vehicleView.Id,  
-        Name: val.BasicInfo.Name || '',
-        Reusability: val.BasicInfo.Reusability || '',
-        PayloadCapacity: val.BasicInfo.PayloadCapacity || '',
-        CargoCrew: val.BasicInfo.CargoCrew || '',
-        Price: val.PriceInfo.Price || '',
-        Security: val.PriceInfo.Security || '',
-        Operational: val.OtherDetails.Operational || '',
-        Height: val.OtherDetails.Height || '',
-        Mass: val.OtherDetails.Mass || '',
-        Fuel: val.OtherDetails.Fuel || '',
-        Description: val.OtherDetails.Description || ''
+        id: this.vehicleView.id,  
+        name: val.BasicInfo.Name || '',
+        reusability: val.BasicInfo.Reusability || '',
+        payloadCapacity: val.BasicInfo.PayloadCapacity || '',
+        crew: val.BasicInfo.Crew || '',
+        price: val.PriceInfo.Price || '',
+        security: val.PriceInfo.Security || '',
+        operational: val.OtherDetails.Operational || '',
+        height: val.OtherDetails.Height || '',
+        mass: val.OtherDetails.Mass || '',
+        fuel: val.OtherDetails.Fuel || '',
+        description: val.OtherDetails.Description || ''
       };
     });
   }
@@ -113,7 +113,7 @@ export class AddVehicleComponent implements OnInit {
   }
 
   get CargoCrew() {
-    return this.addVehicleForm.get('BasicInfo.CargoCrew');
+    return this.addVehicleForm.get('BasicInfo.Crew');
   }
 
   get PriceInfo() {
@@ -174,18 +174,18 @@ export class AddVehicleComponent implements OnInit {
   }
 
   mapVehicle(): void {
-    this.vehicle.Id = this.VehiclesService.newVehId();
-    this.vehicle.Name = this.Name?.value;
-    this.vehicle.Reusability = this.Reusability?.value;
-    this.vehicle.PayloadCapacity = this.PayloadCapacity?.value;
-    this.vehicle.Price = this.Price?.value;
-    this.vehicle.Security = this.Security?.value;
-    this.vehicle.CargoCrew = this.CargoCrew?.value;
-    this.vehicle.Operational = this.Operational?.value;
-    this.vehicle.Height = this.Height?.value;
-    this.vehicle.Mass = this.Mass?.value;
-    this.vehicle.Fuel = this.Fuel?.value;
-    this.vehicle.Description = this.Description?.value;
+    this.vehicle.id = this.VehiclesService.newVehId();
+    this.vehicle.name = this.Name?.value;
+    this.vehicle.reusability = this.Reusability?.value;
+    this.vehicle.payloadCapacity = this.PayloadCapacity?.value;
+    this.vehicle.price = this.Price?.value;
+    this.vehicle.security = this.Security?.value;
+    this.vehicle.crew = this.CargoCrew?.value;
+    this.vehicle.operational = this.Operational?.value;
+    this.vehicle.height = this.Height?.value;
+    this.vehicle.mass = this.Mass?.value;
+    this.vehicle.fuel = this.Fuel?.value;
+    this.vehicle.description = this.Description?.value;
   }
 
   allTabsValid(): boolean {

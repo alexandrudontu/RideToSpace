@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAPI.Data;
 
@@ -10,9 +11,11 @@ using WebAPI.Data;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20241030165627_AddUserVehicleRelationship")]
+    partial class AddUserVehicleRelationship
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,7 +38,7 @@ namespace WebAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Fuels", (string)null);
+                    b.ToTable("Fuels");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Photo", b =>
@@ -60,7 +63,7 @@ namespace WebAPI.Migrations
 
                     b.HasIndex("VehicleId");
 
-                    b.ToTable("Photos", (string)null);
+                    b.ToTable("Photos");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Reusability", b =>
@@ -77,7 +80,7 @@ namespace WebAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Reusabilities", (string)null);
+                    b.ToTable("Reusabilities");
                 });
 
             modelBuilder.Entity("WebAPI.Models.User", b =>
@@ -106,7 +109,7 @@ namespace WebAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Vehicle", b =>
@@ -163,7 +166,7 @@ namespace WebAPI.Migrations
 
                     b.HasIndex("ReusabilityId");
 
-                    b.ToTable("Vehicles", (string)null);
+                    b.ToTable("Vehicles");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Photo", b =>
