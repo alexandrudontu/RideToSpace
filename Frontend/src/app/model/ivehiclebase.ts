@@ -1,6 +1,6 @@
 export interface IVehicleBase {
     id: number | null;
-    reusability: number | null;
+    reusability: string | null;
     name: string | null;
     fuel: string | null;
     crew: boolean | null,

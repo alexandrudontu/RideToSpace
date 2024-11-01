@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using WebAPI.Models;
-
-namespace WebAPI.DTOs
+﻿namespace WebAPI.DTOs
 {
     public class VehicleDetailsDto : VehicleListDto
     {
@@ -11,5 +8,6 @@ namespace WebAPI.DTOs
         public int Mass { get; set; }
         public bool Operational { get; set; }
         public string Description { get; set; }
+        public ICollection<PhotoDto> Photos { get; set; }
     }
 }

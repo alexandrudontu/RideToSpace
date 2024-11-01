@@ -14,7 +14,7 @@ namespace WebAPI.Data.Repo
         }
         public void AddVehicle(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+            dc.Vehicles.Add(vehicle);
         }
 
         public void DeleteVehicle(int id)
@@ -37,6 +37,7 @@ namespace WebAPI.Data.Repo
             var vehicles = await dc.Vehicles
                 .Include(v => v.Fuel)
                 .Include(v => v.Reusability)
+                .Include(v => v.Photos)
                 .Where(v => v.Id == id)
                 .FirstAsync();
             return vehicles;

@@ -7,6 +7,7 @@ using WebAPI.Extensions;
 using WebAPI.Helpers;
 using WebAPI.Interfaces;
 using WebAPI.Middleware;
+using WebAPI.Services;
 
 namespace WebAPI
 {
@@ -32,6 +33,7 @@ namespace WebAPI
 
             builder.Services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped<IPhotoService, PhotoService>();
 
             var secretKey = builder.Configuration.GetSection("AppSettings:Key").Value;
             var key = new SymmetricSecurityKey(Encoding.UTF8

@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
+using FluentAssertions.Equivalency;
 using WebAPI.DTOs;
 using WebAPI.Models;
 
 namespace WebAPI.Helpers
 {
-    public class AutoMapperProfiles: Profile
+    public class AutoMapperProfiles: Profile               
     {
         public AutoMapperProfiles()
         {
@@ -16,6 +17,10 @@ namespace WebAPI.Helpers
             CreateMap<Vehicle, VehicleDetailsDto>()
                 .ForMember(d => d.Reusability, opt => opt.MapFrom(src => src.Reusability.Name))
                 .ForMember(d => d.Fuel, opt => opt.MapFrom(src => src.Fuel.Name));
+
+            CreateMap<Reusability, KeyValuePairDto>().ReverseMap();
+            CreateMap<Vehicle, VehicleDto>().ReverseMap();
+            CreateMap<Photo, PhotoDto>().ReverseMap();
         }
     }
 }

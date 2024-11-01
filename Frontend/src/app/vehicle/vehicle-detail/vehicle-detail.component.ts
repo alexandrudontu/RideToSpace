@@ -13,7 +13,8 @@ import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
 })
 export class VehicleDetailComponent implements OnInit {
   public vehicleId!: number;
-  public vehicle: Vehicle = new Vehicle();
+  public mainPhotoUrl: string = '';
+  vehicle: Vehicle = new Vehicle();
   galleryOptions!: NgxGalleryOptions[];
   galleryImages!: NgxGalleryImage[];
 
@@ -54,42 +55,38 @@ export class VehicleDetailComponent implements OnInit {
   //    }
   //  );
 
-  this.galleryOptions = [
-    {
-      width: '100%',
-      height: '465px',
-      thumbnailsColumns: 4,
-      imageAnimation: NgxGalleryAnimation.Slide,
-      preview: true
-    }
-  ];
+    this.galleryOptions = [
+      {
+        width: '100%',
+        height: '465px',
+        thumbnailsColumns: 4,
+        imageAnimation: NgxGalleryAnimation.Slide,
+        preview: true
+      }
+    ];
 
-  this.galleryImages = [
-    {
-      small: 'assets/images/starship.jpg',
-      medium: 'assets/images/starship.jpg',
-      big: 'assets/images/starship.jpg'
-    },
-    {
-      small: 'assets/images/sls.jpg',
-      medium: 'assets/images/sls.jpg',
-      big: 'assets/images/sls.jpg'
-    },
-    {
-      small: 'assets/images/falcon-9.jpg',
-      medium: 'assets/images/falcon-9.jpg',
-      big: 'assets/images/falcon-9.jpg'
-    },{
-      small: 'assets/images/electron.jpeg',
-      medium: 'assets/images/electron.jpeg',
-      big: 'assets/images/electron.jpeg'
-    },
-    {
-      small: 'assets/img/gallery/5-small.jpeg',
-      medium: 'assets/img/gallery/5-medium.jpeg',
-      big: 'assets/img/gallery/5-big.jpeg'
-    }
-  ];
+    this.galleryImages = this.getVehiclePhotos();
   }
 
+  getVehiclePhotos(): NgxGalleryImage[] {
+    const photoUrls: NgxGalleryImage[] = [];
+
+    if (this.vehicle?.photos) {
+      for(const photo of this.vehicle.photos) {
+        if(photo.isPrimary)
+        {
+          this.mainPhotoUrl = photo.imageUrl;
+        }
+        photoUrls.push(
+          {
+            small: photo.imageUrl,
+            medium: photo.imageUrl,
+            big: photo.imageUrl
+          }
+        );
+      }
+    }
+
+    return photoUrls;
+  }
 }

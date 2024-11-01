@@ -20,6 +20,9 @@ namespace WebAPI.Data
         public IVehicleRepository VehicleRepository => 
             new VehicleRepository(dc);
 
+        public IReusabilityRepository ReusabilityRepository => 
+            new ReusabilityRepository(dc);
+
         public async Task<bool> SaveAsync()
         {
             return await dc.SaveChangesAsync() > 0;

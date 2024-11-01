@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { forkJoin, map, Observable } from 'rxjs';
 import { Vehicle } from '../model/vehicle';
 import { environment } from 'src/environments/environment';
+import { Ikeyvaluepair } from '../model/ikeyvaluepair';
 
 
 @Injectable({
@@ -18,25 +19,35 @@ export class VehiclesService {
     return this.http.get<string[]>(this.baseUrl + '/api/fuel')
   }
 
+  getReusabilityTypes(): Observable<Ikeyvaluepair[]> {
+    return this.http.get<Ikeyvaluepair[]>(this.baseUrl + '/api/reusability/list')
+  }
+
   getVehicle(id: number): Observable<Vehicle | undefined> {
     return this.http.get<Vehicle>(this.baseUrl + '/api/vehicle/details/' + id.toString());
   }
   
-
   getAllVehicles(Crew: boolean): Observable<Vehicle[]> {
-    return this.http.get<Vehicle[]>(this.baseUrl + '/api/vehicle/crewrated/' + Crew.toString());
+    if(Crew === true) {
+      return this.http.get<Vehicle[]>(this.baseUrl + '/api/vehicle/crewrated/true');
+    }
+    else {
+      return forkJoin([
+        this.http.get<Vehicle[]>(this.baseUrl + '/api/vehicle/crewrated/false'),
+        this.http.get<Vehicle[]>(this.baseUrl + '/api/vehicle/crewrated/true')
+      ]).pipe(
+        map(([crewVehicles, nonCrewVehicles]) => [...crewVehicles, ...nonCrewVehicles])
+      );
+    }
   }
 
   addVehicle(vehicle: Vehicle) {
-    let newVeh = [vehicle];
-    localStorage.setItem('newVeh', JSON.stringify(newVeh));
-
-    const storedVeh = localStorage.getItem('newVeh');
-    if (storedVeh) {
-      newVeh = [vehicle, ...JSON.parse(storedVeh)];
-    } else {
-      newVeh = [vehicle]; 
-}
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + localStorage.getItem('token')
+      })
+    };
+    return this.http.post(this.baseUrl + '/api/vehicle/add', vehicle, httpOptions);
   }
 
   newVehId(): number {

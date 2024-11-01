@@ -9,10 +9,16 @@ import { AlertifyService } from '../services/alertify.service';
 export class NavBarComponent implements OnInit {
 
   loggedInUser!: string;
+  isAdmin = false;
 
   constructor(private alertify: AlertifyService) { }
 
   ngOnInit() {
+    
+    if(localStorage.getItem('role') == "admin")
+    {
+      this.isAdmin = true;
+    }
   }
 
   loggedIn() {
@@ -23,6 +29,7 @@ export class NavBarComponent implements OnInit {
   onLogout() {
     localStorage.removeItem('token');
     localStorage.removeItem('email');
+    localStorage.removeItem('role');
     this.alertify.success("You have been logged out");
   }
 }

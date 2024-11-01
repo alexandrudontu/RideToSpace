@@ -11,7 +11,8 @@
               <tab heading="Basic Info" formGroupName="BasicInfo">
                 <div class="form-group col-12">
                   <label>Name</label>
-                  <input type="text" class="form-control" formControlName="Name">
+                  <input type="text" class="form-control" #vehName (keyup)="vehicleView.name=vehName.value"
+                    formControlName="Name">
                   <div class="error-block" *ngIf="Name?.invalid && (nextClicked || Name?.touched)">
                     Please enter Vehicle Name
                   </div>
@@ -20,8 +21,9 @@
                 <div class="form-group col-12">
                   <p>Reusability</p>
                   <div class="btn-group" btnRadioGroup formControlName="Reusability">
-                    <label *ngFor="let vtype of vehicleTypes" class="btn btn-outline-primary mr-2" [btnRadio]="vtype"
-                      tabindex="0" role="button" name="vehType">{{vtype}}
+                    <label *ngFor="let rtype of reusabilityTypes" class="btn btn-outline-primary mr-2"
+                      [btnRadio]="rtype.id" tabindex="0" role="button" (click)="vehicleView.reusability = rtype.name"
+                      name="rType">{{rtype.name}}
                     </label>
                   </div>
                   <div class="error-block" *ngIf="Reusability?.invalid && nextClicked">
@@ -31,7 +33,9 @@
 
                 <div class="form-group col-12">
                   <label>Payload Capacity (Tons)</label>
-                  <input type="text" class="form-control" formControlName="PayloadCapacity">
+                  <input type="text" class="form-control" #payloadCap
+                    (keyup)="vehicleView.payloadCapacity=parseToFloat(payloadCap.value)"
+                    formControlName="PayloadCapacity">
                   <div class="error-block"
                     *ngIf="PayloadCapacity?.invalid && (nextClicked || PayloadCapacity?.touched)">
                     Please enter Payload Capacity
@@ -40,12 +44,15 @@
 
                 <div class="form-group col-12">
                   <label>Can Launch</label>
-                  <div class="btn-group" btnRadioGroup formControlName="CargoCrew">
-                    <label *ngFor="let ptype of payloadTypes" class="btn btn-outline-primary mr-2" [btnRadio]="ptype"
-                      tabindex="0" role="button" name="CargoCrew">{{ptype}}
-                    </label>
+                  <div class="btn-group" btnRadioGroup formControlName="Crew">
+                    <label class="btn btn-outline-primary" btnRadio="false" tabindex="0" role="button"
+                      (click)="vehicleView.crew = false" name="CargoOnly">Cargo
+                      Only</label>
+                    <label class="btn btn-outline-primary" btnRadio="true" tabindex="0" role="button"
+                      (click)="vehicleView.crew = true" name="CargoCrew">Cargo &
+                      Crew</label>
                   </div>
-                  <div class="error-block" *ngIf="CargoCrew?.invalid && nextClicked">
+                  <div class="error-block" *ngIf="Crew?.invalid && nextClicked">
                     Please select Payload Type
                   </div>
                 </div>
@@ -59,7 +66,8 @@
               <tab heading="Pricing" formGroupName="PriceInfo">
                 <div class="form-group col-12">
                   <label>Price (in Million USD)</label>
-                  <input type="text" class="form-control" name="price" formControlName="Price">
+                  <input type="text" class="form-control" #price (keyup)="vehicleView.price=parseToFloat(price.value)"
+                    formControlName="Price">
                   <div class="error-block" *ngIf="Price?.invalid && (nextClicked || Price?.touched)">
                     Please enter Price Amount
                   </div>
@@ -67,7 +75,8 @@
 
                 <div class="form-group col-12">
                   <label>Security (in USD )</label>
-                  <input type="text" class="form-control" name="security" formControlName="Security">
+                  <input type="text" class="form-control" #security
+                    (keyup)="vehicleView.security=parseToFloat(security.value)" formControlName="Security">
                   <div class="error-block" *ngIf="Security?.invalid && (nextClicked || Security?.touched)">
                     Please enter Security Amount
                   </div>
@@ -85,9 +94,11 @@
               <tab heading="Other Details" formGroupName="OtherDetails">
                 <div class="form-group col-12">
                   <label>Operational</label>
-                  <div class="btn-group" btnRadioGroup name="operationType" formControlName="Operational">
-                    <label class="btn btn-outline-primary" btnRadio="1" role="button" name="Operational">Yes</label>
-                    <label class="btn btn-outline-primary" btnRadio="2" role="button" name="Upcoming">No</label>
+                  <div class="btn-group" btnRadioGroup formControlName="Operational">
+                    <label class="btn btn-outline-primary" btnRadio="true" role="button"
+                      (click)="vehicleView.operational=true" name="Operational">Yes</label>
+                    <label class="btn btn-outline-primary" btnRadio="false" role="button"
+                      (click)="vehicleView.operational=false" name="Upcoming">No</label>
                   </div>
                   <div class="error-block" *ngIf="Operational?.invalid && nextClicked">
                     Please select Operational Status
@@ -96,7 +107,8 @@
 
                 <div class="form-group col-12">
                   <label>Vehicle Height (m)</label>
-                  <input type="text" class="form-control" name="height" formControlName="Height">
+                  <input type="text" class="form-control" #height
+                    (keyup)="vehicleView.height=parseToFloat(height.value)" formControlName="Height">
                   <div class="error-block" *ngIf="Height?.invalid && (nextClicked || Height?.touched)">
                     Please enter Vehicle Height
                   </div>
@@ -104,7 +116,8 @@
 
                 <div class="form-group col-12">
                   <label>Vehicle Mass (Tons)</label>
-                  <input type="text" class="form-control" name="mass" formControlName="Mass">
+                  <input type="text" class="form-control" #mass (keyup)="vehicleView.mass=parseToFloat(mass.value)"
+                    formControlName="Mass">
                   <div class="error-block" *ngIf="Mass?.invalid && (nextClicked || Mass?.touched)">
                     Please enter Vehicle Mass
                   </div>
@@ -112,7 +125,7 @@
 
                 <div class="form-group col-12">
                   <label>Fuel</label>
-                  <select class="form-control" formControlName="Fuel" [(ngModel)]="vehicleView.fuel">
+                  <select class="form-control" formControlName="Fuel">
                     <option value="">--Select Fuel--</option>
                     <option *ngFor="let fuel of fuelList" value={{fuel.id}}>{{fuel.name}}</option>
                   </select>

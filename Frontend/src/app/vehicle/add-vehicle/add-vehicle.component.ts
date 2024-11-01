@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
 import { TabsetComponent } from 'ngx-bootstrap/tabs';
+import { Ikeyvaluepair } from 'src/app/model/ikeyvaluepair';
 import { IVehicleBase } from 'src/app/model/ivehiclebase';
 import { Vehicle } from 'src/app/model/vehicle';
 import { AlertifyService } from 'src/app/services/alertify.service';
@@ -20,18 +21,17 @@ export class AddVehicleComponent implements OnInit {
   nextClicked: boolean = false;
   vehicle = new Vehicle();
 
-  vehicleTypes: Array<string> = ['Expendable', 'Partially Reusable', 'Fully Reusable'];
-  payloadTypes: Array<string> = ['Cargo', 'Cargo & Crew'];
+  reusabilityTypes!: Ikeyvaluepair[];
   fuelList: any[] = [];
 
   vehicleView: IVehicleBase = {
     id: null,
-    reusability: null,
+    reusability: '',
     name: '',
     fuel: '',
     payloadCapacity: null,
     price: null,
-    crew: false,
+    crew: null,
     operational: null,
     security: null,
     height: null,
@@ -45,15 +45,26 @@ export class AddVehicleComponent implements OnInit {
               private alertify: AlertifyService) { }
 
   ngOnInit() {
+    if(!localStorage.getItem('email'))
+    {
+      this.alertify.error('You must be logged in to add a vehicle');
+      this.router.navigate(['/user/login']);
+    }
     this.createAddVehicleForm();
     this.onFormValueChanges();
     this.VehiclesService.getAllFuels().subscribe(data => {
       this.fuelList = data;
       console.log(data);
-    }
-
-    )
+    });
+    this.VehiclesService.getReusabilityTypes().subscribe(data => {
+      this.reusabilityTypes = data;
+    })
   }
+
+  parseToFloat(value: string): number | null {
+    const parsed = parseFloat(value);
+    return isNaN(parsed) ? null : parsed;
+  }  
 
   createAddVehicleForm() {
     this.addVehicleForm = this.fb.group({
@@ -61,7 +72,7 @@ export class AddVehicleComponent implements OnInit {
         Name: [null, Validators.required],
         Reusability: [null, Validators.required],
         PayloadCapacity: [null, Validators.required],
-        CargoCrew: [null, Validators.required]
+        Crew: [null, Validators.required]
       }),
       PriceInfo: this.fb.group({
         Price: [null, Validators.required],
@@ -79,12 +90,16 @@ export class AddVehicleComponent implements OnInit {
 
   onFormValueChanges() {
     this.addVehicleForm.valueChanges.subscribe(val => {
+       const selectedReusability = this.reusabilityTypes
+      ? this.reusabilityTypes.find(type => type.id === val.BasicInfo.Reusability)?.name || ''
+      : '';
+
       this.vehicleView = {
         id: this.vehicleView.id,  
         name: val.BasicInfo.Name || '',
-        reusability: val.BasicInfo.Reusability || '',
+        reusability: selectedReusability,
         payloadCapacity: val.BasicInfo.PayloadCapacity || '',
-        crew: val.BasicInfo.Crew || '',
+        crew: val.BasicInfo.Crew || null,
         price: val.PriceInfo.Price || '',
         security: val.PriceInfo.Security || '',
         operational: val.OtherDetails.Operational || '',
@@ -112,7 +127,7 @@ export class AddVehicleComponent implements OnInit {
     return this.addVehicleForm.get('BasicInfo.PayloadCapacity');
   }
 
-  get CargoCrew() {
+  get Crew() {
     return this.addVehicleForm.get('BasicInfo.Crew');
   }
 
@@ -160,31 +175,35 @@ export class AddVehicleComponent implements OnInit {
     this.nextClicked = true;
     if(this.allTabsValid()) {
       this.mapVehicle();
-      this.VehiclesService.addVehicle(this.vehicle);
-      this.alertify.success('Form Submitted');
-      console.log(this.addVehicleForm);
+      this.VehiclesService.addVehicle(this.vehicle).subscribe(
+        () => {
+          this.alertify.success('Form Submitted');
+          console.log(this.addVehicleForm);
+          if(this.Crew?.value === false) {
+                this.router.navigate(['/']);
+              } else {
+                this.router.navigate(['/crew']);
+              }
+        }
+      );
     } else {
       this.alertify.error('Form is invalid');
     }
-    if(this.CargoCrew?.value === 'Cargo') {
-      this.router.navigate(['/']);
-    } else {
-      this.router.navigate(['/crew']);
-    }
+    
   }
 
   mapVehicle(): void {
     this.vehicle.id = this.VehiclesService.newVehId();
     this.vehicle.name = this.Name?.value;
-    this.vehicle.reusability = this.Reusability?.value;
+    this.vehicle.ReusabilityId = this.Reusability?.value;
     this.vehicle.payloadCapacity = this.PayloadCapacity?.value;
     this.vehicle.price = this.Price?.value;
     this.vehicle.security = this.Security?.value;
-    this.vehicle.crew = this.CargoCrew?.value;
+    this.vehicle.crew = this.Crew?.value;
     this.vehicle.operational = this.Operational?.value;
     this.vehicle.height = this.Height?.value;
     this.vehicle.mass = this.Mass?.value;
-    this.vehicle.fuel = this.Fuel?.value;
+    this.vehicle.FuelId = this.Fuel?.value;
     this.vehicle.description = this.Description?.value;
   }
 
