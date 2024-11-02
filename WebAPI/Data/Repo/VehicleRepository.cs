@@ -28,6 +28,7 @@ namespace WebAPI.Data.Repo
                 .Include(v => v.Fuel)
                 .Include(v => v.Reusability)
                 .Where(v => v.Crew == crew)
+                .Include(v => v.Photos)
                 .ToListAsync();
             return vehicles;
         }
@@ -35,11 +36,22 @@ namespace WebAPI.Data.Repo
         public async Task<Vehicle> GetVehicleDetailsAsync(int id)
         {
             var vehicles = await dc.Vehicles
+                .Include(v => v.User)
                 .Include(v => v.Fuel)
                 .Include(v => v.Reusability)
                 .Include(v => v.Photos)
                 .Where(v => v.Id == id)
                 .FirstAsync();
+            return vehicles;
+        }
+
+        public async Task<Vehicle> GetVehicleByIdAsync(int id)
+        {
+            var vehicles = await dc.Vehicles
+            .Include(p => p.Photos)
+            .Where(p => p.Id == id)
+            .FirstOrDefaultAsync();
+
             return vehicles;
         }
     }

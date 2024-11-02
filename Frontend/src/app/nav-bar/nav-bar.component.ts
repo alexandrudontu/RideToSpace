@@ -7,9 +7,8 @@ import { AlertifyService } from '../services/alertify.service';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-
-  loggedInUser!: string;
   isAdmin = false;
+  loggedInUser!: string;
 
   constructor(private alertify: AlertifyService) { }
 
@@ -22,13 +21,14 @@ export class NavBarComponent implements OnInit {
   }
 
   loggedIn() {
-    this.loggedInUser = localStorage.getItem('email') || '';
+    this.loggedInUser = localStorage.getItem('username') || '';
     return this.loggedInUser;
   }
 
   onLogout() {
     localStorage.removeItem('token');
     localStorage.removeItem('email');
+    localStorage.removeItem('username');
     localStorage.removeItem('role');
     this.alertify.success("You have been logged out");
   }

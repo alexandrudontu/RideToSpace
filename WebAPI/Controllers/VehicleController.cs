@@ -52,29 +52,125 @@ namespace WebAPI.Controllers
 
         [HttpPost("add/photo/{vehId}")]
         [Authorize]
-        public async Task<IActionResult> AddVehiclePhoto(IFormFile file, int vehId)
+        public async Task<ActionResult<PhotoDto>> AddVehiclePhoto(IFormFile file, int vehId)
         {
             var result = await photoService.UploadPhotoAsync(file);
             if (result.Error != null)
             {
                 return BadRequest(result.Error.Message);
             }
+            var userId = GetUserId();
             var vehicle = await uow.VehicleRepository.GetVehicleDetailsAsync(vehId);
+
+            if (vehicle.PostedBy != userId)
+            {
+                return BadRequest("You are not authorised to upload photo for this property");
+            }
 
             var photo = new Photo
             {
                 ImageUrl = result.SecureUrl.AbsoluteUri,
                 PublicId = result.PublicId
             };
-            if(vehicle.Photos.Count == 0)
+            if (vehicle.Photos.Count == 0)
             {
                 photo.IsPrimary = true;
             }
 
             vehicle.Photos.Add(photo);
-            await uow.SaveAsync();
+            
+            if(await uow.SaveAsync())
+            {
+                return mapper.Map<PhotoDto>(photo);
+            }
+            return BadRequest("Some problem occured in uploading photo");
+        }
 
-            return StatusCode(201);
+        [HttpPost("set-primary-photo/{vehId}/{photoPublicId}")]
+        [Authorize]
+        public async Task<IActionResult> SetPrimaryPhoto(int vehId, string photoPublicId)
+        {
+            var userId = GetUserId();
+            var vehicle = await uow.VehicleRepository.GetVehicleByIdAsync(vehId);
+
+            if (vehicle == null)
+            {
+                return BadRequest("No such vehicle or photo exists");
+            }
+            if (vehicle.PostedBy != userId)
+            {
+                return BadRequest("You are not authorized to change the photo");
+            }
+
+            var photo = vehicle.Photos.FirstOrDefault(p => p.PublicId == photoPublicId);
+
+            if (photo == null)
+            {
+                return BadRequest("No such vehicle or photo exists");
+            }
+
+            if (photo.IsPrimary)
+            {
+                return BadRequest("This is already a primary photo");
+            }
+
+            var currentPrimary = vehicle.Photos.FirstOrDefault(p => p.IsPrimary);
+            if (currentPrimary != null)
+            {
+                currentPrimary.IsPrimary = false;
+            }
+            photo.IsPrimary = true;
+
+            if(await uow.SaveAsync())
+            {
+                return NoContent();
+            }
+
+            return BadRequest("Some error occured, failed to set primary photo");
+        }
+
+        [HttpDelete("delete-photo/{vehId}/{photoPublicId}")]
+        [Authorize]
+        public async Task<IActionResult> DeletePhoto(int vehId, string photoPublicId)
+        {
+            var userId = GetUserId();
+            var vehicle = await uow.VehicleRepository.GetVehicleByIdAsync(vehId);
+
+            if (vehicle == null)
+            {
+                return BadRequest("No such vehicle or photo exists");
+            }
+            if (vehicle.PostedBy != userId)
+            {
+                return BadRequest("You are not authorized to delete the photo");
+            }
+
+            var photo = vehicle.Photos.FirstOrDefault(p => p.PublicId == photoPublicId);
+
+            if (photo == null)
+            {
+                return BadRequest("No such vehicle or photo exists");
+            }
+
+            if (photo.IsPrimary)
+            {
+                return BadRequest("You cannot delete the primary photo");
+            }
+
+            var result = await photoService.DeletePhotoAsync(photo.PublicId);
+            if (result.Error != null)
+            {
+                return BadRequest(result.Error.Message);
+            }
+
+            vehicle.Photos.Remove(photo);
+
+            if (await uow.SaveAsync())
+            {
+                return Ok();
+            }
+
+            return BadRequest("Some error occured, failed to delete photo");
         }
     }
 }

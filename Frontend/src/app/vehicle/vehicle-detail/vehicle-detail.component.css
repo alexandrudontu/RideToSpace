@@ -6,6 +6,7 @@
     padding: 10px;
     height: 250px;
     width: fit-content;
+    max-width: 22rem;
     display: block;
     margin: auto;
   }

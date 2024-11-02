@@ -11,5 +11,5 @@ export interface IVehicleBase {
     height: number | null;
     mass: number | null;
     description: string | null;
-    image?: string;
+    photo?: string;
 }

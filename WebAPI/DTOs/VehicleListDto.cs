@@ -8,5 +8,6 @@
         public bool Crew { get; set; }
         public int Price { get; set; }
         public int PayloadCapacity { get; set; }
+        public string Photo { get; set; }
     }
 }

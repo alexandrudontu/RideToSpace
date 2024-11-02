@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, ValidatorFn, AbstractControl, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserForRegister } from 'src/app/model/user';
 import { AlertifyService } from 'src/app/services/alertify.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -17,7 +18,8 @@ export class UserRegisterComponent implements OnInit {
 
   constructor(private fb: FormBuilder, 
               private authService: AuthService,
-              private alertify: AlertifyService) { }
+              private alertify: AlertifyService,
+              private router: Router) { }
 
   ngOnInit() {
     this.createRegistrationForm();  
@@ -59,6 +61,7 @@ export class UserRegisterComponent implements OnInit {
         this.registrationForm.reset();
         this.userSubmitted = false;
         this.alertify.success("You have been registered successfully");
+        this.router.navigate(['/']);
       });
     } 
   }

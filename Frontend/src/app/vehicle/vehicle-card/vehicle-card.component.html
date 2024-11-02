@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-img-wrapper">
-        <img *ngIf="vehicle.image" class="card-img-top rounded mx-auto d-block" src="assets/images/{{vehicle.image}}">
-        <img *ngIf="!vehicle.image" class="card-img-top rounded mx-auto d-block" src="assets/images/default.png">
+        <img *ngIf="vehicle.photo" class="card-img-top rounded mx-auto d-block" src="{{vehicle.photo}}">
+        <img *ngIf="!vehicle.photo" class="card-img-top rounded mx-auto d-block" src="assets/images/default.png">
         <ul *ngIf="!hideIcons" class="list-inline text-center member-icons animate">
             <li class="list-inline-item">
                 <button class="btn btn-primary" routerLink="/vehicle-detail/{{vehicle.id}}"><i

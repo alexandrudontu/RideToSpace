@@ -60,4 +60,24 @@ export class VehiclesService {
     } 
     return someId;
   }
+
+  setPrimaryPhoto(vehicleId: number, vehiclePhotoId: string) {
+    const httpOptions = {
+        headers: new HttpHeaders({
+            Authorization: 'Bearer '+ localStorage.getItem('token')
+        })
+    };
+    return this.http.post(this.baseUrl + '/api/vehicle/set-primary-photo/'+String(vehicleId)
+        + '/' + vehiclePhotoId, {}, httpOptions);
+  }
+
+  deletePhoto(vehicleId: number, vehiclePhotoId: string) {
+    const httpOptions = {
+        headers: new HttpHeaders({
+            Authorization: 'Bearer '+ localStorage.getItem('token')
+        })
+    };
+    return this.http.delete(this.baseUrl + '/api/vehicle/delete-photo/'
+        +String(vehicleId) + '/' + vehiclePhotoId, httpOptions);
+  }
 }

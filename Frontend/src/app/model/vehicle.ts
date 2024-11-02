@@ -1,5 +1,6 @@
 import { IVehicleBase } from "./ivehiclebase";
 import { Photo } from "./photo";
+import { UserForInfo, UserForLogin } from "./user";
 
 export class Vehicle implements IVehicleBase {
     id!: number;
@@ -18,4 +19,5 @@ export class Vehicle implements IVehicleBase {
     description!: string;
     image?: string;
     photos?: Photo[];
+    postedBy!: UserForInfo;
 }

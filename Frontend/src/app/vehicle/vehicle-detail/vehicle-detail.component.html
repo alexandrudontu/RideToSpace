@@ -30,12 +30,6 @@
           {{vehicle.mass}} Tons
         </div>
       </div>
-      <div class="card-footer">
-        <div class="btn-group d-flex">
-          <button class="btn btn-primary">Like</button>
-          <button class="btn btn-success">Message</button>
-        </div>
-      </div>
     </div>
   </div>
   <div class="col-sm-8 p-0">
@@ -73,9 +67,18 @@
         <tab heading="Photos">
           <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
         </tab>
+        <tab *ngIf="isAdmin" heading="Upload/Edit Photos">
+          <app-photo-editor [vehicle]="vehicle" (mainPhotoChangedEvent)="changePrimaryPhoto($event)"></app-photo-editor>
+        </tab>
         <tab heading="Contact">
-          <h1>Contact Detail</h1>
-          This should be restricted area and only registered user should be able to see seller contact details
+          <h1>Contact Details</h1>
+          <div class="heading">
+            <p><strong>Posted By: </strong>{{vehicle.postedBy.userName}}</p>
+          </div>
+          <div class="heading">
+            <p><strong>Email: </strong>{{vehicle.postedBy.email}}</p>
+          </div>
+
         </tab>
       </tabset>
     </div>

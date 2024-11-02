@@ -17,6 +17,7 @@ export class AddVehicleComponent implements OnInit {
   //@ViewChild('Form') addVehicleForm!: NgForm;
   @ViewChild('formTabs') formTabs?: TabsetComponent;
 
+  public mainPhotoUrl: string = '';
   addVehicleForm!: FormGroup;
   nextClicked: boolean = false;
   vehicle = new Vehicle();
@@ -96,17 +97,17 @@ export class AddVehicleComponent implements OnInit {
 
       this.vehicleView = {
         id: this.vehicleView.id,  
-        name: val.BasicInfo.Name || '',
+        name: val.BasicInfo.Name,
         reusability: selectedReusability,
-        payloadCapacity: val.BasicInfo.PayloadCapacity || '',
-        crew: val.BasicInfo.Crew || null,
-        price: val.PriceInfo.Price || '',
-        security: val.PriceInfo.Security || '',
-        operational: val.OtherDetails.Operational || '',
-        height: val.OtherDetails.Height || '',
-        mass: val.OtherDetails.Mass || '',
-        fuel: val.OtherDetails.Fuel || '',
-        description: val.OtherDetails.Description || ''
+        payloadCapacity: val.BasicInfo.PayloadCapacity,
+        crew: val.BasicInfo.Crew,
+        price: val.PriceInfo.Price,
+        security: val.PriceInfo.Security,
+        operational: val.OtherDetails.Operational,
+        height: val.OtherDetails.Height,
+        mass: val.OtherDetails.Mass,
+        fuel: val.OtherDetails.Fuel,
+        description: val.OtherDetails.Description
       };
     });
   }
@@ -179,11 +180,7 @@ export class AddVehicleComponent implements OnInit {
         () => {
           this.alertify.success('Form Submitted');
           console.log(this.addVehicleForm);
-          if(this.Crew?.value === false) {
-                this.router.navigate(['/']);
-              } else {
-                this.router.navigate(['/crew']);
-              }
+          this.router.navigate(['/']);   
         }
       );
     } else {

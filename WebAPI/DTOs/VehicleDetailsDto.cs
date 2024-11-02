@@ -1,4 +1,5 @@
-﻿namespace WebAPI.DTOs
+﻿
+namespace WebAPI.DTOs
 {
     public class VehicleDetailsDto : VehicleListDto
     {
@@ -9,5 +10,6 @@
         public bool Operational { get; set; }
         public string Description { get; set; }
         public ICollection<PhotoDto> Photos { get; set; }
+        public UserDto PostedBy { get; set; }
     }
 }

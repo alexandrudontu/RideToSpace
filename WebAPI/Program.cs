@@ -58,9 +58,9 @@ namespace WebAPI
 
             // app.ConfigureExceptionHandler(app.Environment);
 
-            app.UseMiddleware<ExceptionMiddleware>();
-                                                              
             app.UseCors("MyPolicy");
+
+            app.UseMiddleware<ExceptionMiddleware>();                                                      
 
             app.UseAuthentication();
 

@@ -38,6 +38,7 @@ namespace WebAPI.Controllers
 
             var loginRes = new LoginResDto();
             loginRes.Email = user.Email;
+            loginRes.UserName = user.UserName;
             loginRes.Role = user.Role;  
             loginRes.Token = CreateJWT(user);
             return Ok(loginRes);
